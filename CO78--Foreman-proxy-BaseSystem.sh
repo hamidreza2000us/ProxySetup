@@ -12,7 +12,7 @@ NETMASK=${NETMASK:="$(ip a sh | grep "ens" | grep "inet" |  awk '{print $2}' |  
 if [[ $ProxyNETMASK != $NETMASK ]] ; then Fault=true ; fi
 GW=${GW:="$(ip route get 8.8.8.8 | awk '{print $3; exit}')"}
 if [[ $ProxyGW != $GW ]] ; then Fault=true ; fi
-ENS=${ENS:="$(ip a sh | grep -B2 $ForemanIP |grep ": ens" | awk '{print $2}' | sed -e "s/://g")"}
+ENS=${ENS:="$(ip a sh | grep -B2 $ProxyIP |grep ": ens" | awk '{print $2}' | sed -e "s/://g")"}
 if [[ -z $ENS ]] ; then Fault=true ; fi
 if [[ $Fault == true ]]
 then
