@@ -9,3 +9,4 @@ export ProxyNETMASK=24
 export ProxyGW=192.168.13.2
 export ForemanIP=192.168.13.250
 export ForemanHOSTNAME=foreman.myhost.com
+
