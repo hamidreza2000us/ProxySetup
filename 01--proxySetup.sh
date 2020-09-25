@@ -1,9 +1,10 @@
 #this script setup a Proxy server (Capsule) for a running foreman installation
 #######################################################################################
 git clone https://github.com/hamidreza2000us/proxysetup.git
-ssh-copy-id root@$ProxyIP
 
 bash ~/proxysetup/CO78-BaseProxyParameters.sh
+source ~/proxysetup/variables.sh
+ssh-copy-id root@$ProxyIP
 scp -r ~/proxysetup root@$ProxyIP:~/
 ssh $ProxyIP bash ~/proxysetup/CO78--Foreman-proxy-BaseSystem.sh
 ssh $ProxyIP bash ~/proxysetup/CO78-SetupChronyClient.sh 

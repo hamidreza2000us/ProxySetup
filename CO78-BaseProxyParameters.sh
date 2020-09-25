@@ -7,7 +7,6 @@ fi
 
 read -rp "IDM Hostname to use: ($IDMHOSTNAME): " choice; [[ -n "${choice}"  ]] &&  export IDMHOSTNAME="$choice"; 
 read -rp "IDM IP to use: ($IDMIP): " choice; [[ -n "${choice}"  ]] &&  export IDMIP="$choice"; 
-read -rp "IDM Netmask to use (just the number of bits): ($IDMNETMASK): " choice;[[ -n "${choice}"  ]] &&  export IDMNETMASK="$choice"; 
 read -rp "IDM domain to use: ($IDMDomain): " choice; [[ -n "${choice}"  ]] &&  export IDMDomain="$choice";
 read -rp "IDM Realm to use: ($IDMRealm): " choice; [[ -n "${choice}"  ]] &&  export IDMRealm="$choice";
 read -rp "IDM Password to use: ($IDMPass): " choice; [[ -n "${choice}"  ]] &&  export IDMPass="$choice";
@@ -21,7 +20,6 @@ read -rp "Foreman Password to use: ($ProxyPass): " choice;	[[ -n "${choice}"  ]]
 
 echo "export IDMHOSTNAME=$IDMHOSTNAME" > ~/proxysetup/variables.sh
 echo "export IDMIP=$IDMIP" >> ~/proxysetup/variables.sh
-echo "export IDMNETMASK=$IDMNETMASK" >> ~/proxysetup/variables.sh
 echo "export IDMDomain=$IDMDomain" >> ~/proxysetup/variables.sh
 echo "export IDMRealm=$IDMRealm" >> ~/proxysetup/variables.sh
 echo "export IDMPass=$IDMPass" >> ~/proxysetup/variables.sh
