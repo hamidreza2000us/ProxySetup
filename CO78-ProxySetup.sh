@@ -11,4 +11,5 @@ yum install -y https://yum.theforeman.org/client/latest/el7/x86_64/foreman-clien
 yum install -y foreman-proxy-content
 
 if  [  $( firewall-cmd --query-service=RH-Satellite-6) == 'no'  ] ; then firewall-cmd --permanent --add-service=RH-Satellite-6 ; fi
+firewall-cmd --add-port=8443/tcp --permanent
 firewall-cmd --reload
